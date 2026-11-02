@@ -1,6 +1,6 @@
 # Site — Dr. Arthur Dal Cortivo · Ortopedia Pediátrica
 
-Site institucional do **Dr. Arthur Cartonilho Dal Cortivo** (Ortopedia e Traumatologia · Ortopedia Pediátrica · CRM 10898).
+Site institucional do **Dr. Arthur Cartonilho Dal Cortivo** (Ortopedia e Traumatologia · Ortopedia Pediátrica · CRM-AM 10898 · RQE 5961).
 
 🔗 **Acesse:** https://willpine1992.github.io/SITE-ARTHUR/
 
@@ -70,14 +70,13 @@ Animações respeitam `prefers-reduced-motion`.
 - **Local:** Day Hospital — Rua Rio Amapá, 124 - Nossa Sra. das Graças, Manaus - AM, 69053-150 (link abre no Google Maps).
 - **Instagram:** [@dr.arthurcortivo](https://www.instagram.com/dr.arthurcortivo/)
 - **Horário:** segunda a sexta, das 7h às 16h.
+- **Registro:** CRM-AM 10898 · RQE 5961 (exibido no topo, na seção Sobre e no rodapé, conforme Resolução CFM nº 2.336/2023).
 
 ## ✏️ O que falta preencher
 
 Itens ainda pendentes:
 
-1. **RQE** — a Resolução CFM nº 2.336/2023 exige o número do RQE ao anunciar especialidade. Adicionar ao lado do CRM (hero, seção "Sobre" e rodapé), ex.: `CRM-XX 10898 · RQE 0000`.
-2. **UF do CRM** — confirmar o estado (ex.: CRM-AM).
-3. **Foto profissional** do médico (opcional, recomendada na seção "Sobre").
+1. **Foto profissional** do médico (opcional, recomendada na seção "Sobre").
 
 ## ⚠️ Imagens de raio-X
 
