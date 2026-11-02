@@ -64,18 +64,20 @@ Os "blobs" coloridos animados no fundo (`.ambient`) são o que dá vida ao vidro
 
 Animações respeitam `prefers-reduced-motion`.
 
+## Contato configurado
+
+- **WhatsApp:** +55 (92) 8129-7877 → `https://wa.me/559281297877` (botão de agendamento, item de contato, botão da barra superior e botão flutuante). Para trocar, substitua `559281297877` em todo o `index.html`.
+
 ## ✏️ O que falta preencher
 
 Procure por `TODO` no `index.html`:
 
-1. **WhatsApp** — trocar `5592000000000` no link `wa.me` pelo número real (formato: 55 + DDD + número, só dígitos).
-2. **Endereço do consultório** — texto e link (pode ser link do Google Maps).
-3. **Telefone** — texto e `href="tel:+55..."`.
-4. **Instagram** — usuário e link.
-5. **Horário de atendimento.**
-6. **RQE** — a Resolução CFM nº 2.336/2023 exige o número do RQE ao anunciar especialidade. Adicionar ao lado do CRM (hero, seção "Sobre" e rodapé), ex.: `CRM-XX 10898 · RQE 0000`.
-7. **UF do CRM** — confirmar o estado (ex.: CRM-AM).
-8. **Foto profissional** do médico (opcional, recomendada na seção "Sobre").
+1. **Endereço do consultório** — texto e link (pode ser link do Google Maps).
+2. **Instagram** — usuário e link.
+3. **Horário de atendimento.**
+4. **RQE** — a Resolução CFM nº 2.336/2023 exige o número do RQE ao anunciar especialidade. Adicionar ao lado do CRM (hero, seção "Sobre" e rodapé), ex.: `CRM-XX 10898 · RQE 0000`.
+5. **UF do CRM** — confirmar o estado (ex.: CRM-AM).
+6. **Foto profissional** do médico (opcional, recomendada na seção "Sobre").
 
 ## ⚠️ Imagens de raio-X
 
