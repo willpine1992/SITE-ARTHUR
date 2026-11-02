@@ -66,18 +66,18 @@ Animações respeitam `prefers-reduced-motion`.
 
 ## Contato configurado
 
-- **WhatsApp:** +55 (92) 8129-7877 → `https://wa.me/559281297877` (botão de agendamento, item de contato, botão da barra superior e botão flutuante). Para trocar, substitua `559281297877` em todo o `index.html`.
+- **WhatsApp:** +55 (92) 98129-7877 → `https://wa.me/5592981297877` (botão de agendamento, item de contato, botão da barra superior e botão flutuante). Para trocar, substitua `5592981297877` em todo o `index.html`.
+- **Local:** Day Hospital — Rua Rio Amapá, 124 - Nossa Sra. das Graças, Manaus - AM, 69053-150 (link abre no Google Maps).
+- **Instagram:** [@dr.arthurcortivo](https://www.instagram.com/dr.arthurcortivo/)
+- **Horário:** segunda a sexta, das 7h às 16h.
 
 ## ✏️ O que falta preencher
 
-Procure por `TODO` no `index.html`:
+Itens ainda pendentes:
 
-1. **Endereço do consultório** — texto e link (pode ser link do Google Maps).
-2. **Instagram** — usuário e link.
-3. **Horário de atendimento.**
-4. **RQE** — a Resolução CFM nº 2.336/2023 exige o número do RQE ao anunciar especialidade. Adicionar ao lado do CRM (hero, seção "Sobre" e rodapé), ex.: `CRM-XX 10898 · RQE 0000`.
-5. **UF do CRM** — confirmar o estado (ex.: CRM-AM).
-6. **Foto profissional** do médico (opcional, recomendada na seção "Sobre").
+1. **RQE** — a Resolução CFM nº 2.336/2023 exige o número do RQE ao anunciar especialidade. Adicionar ao lado do CRM (hero, seção "Sobre" e rodapé), ex.: `CRM-XX 10898 · RQE 0000`.
+2. **UF do CRM** — confirmar o estado (ex.: CRM-AM).
+3. **Foto profissional** do médico (opcional, recomendada na seção "Sobre").
 
 ## ⚠️ Imagens de raio-X
 
