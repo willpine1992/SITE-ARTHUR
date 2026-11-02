@@ -16,9 +16,11 @@ Página única, estática (HTML + CSS + JS puros, sem build), com design inspira
 ├── assets/
 │   ├── logo-mark.png   # monograma "AC" + árvore, fundo transparente
 │   ├── logo-full.png   # logo completa com textos, fundo transparente
-│   ├── xray-quadril.webp
-│   ├── xray-maos.webp
-│   └── xray-pe.webp    # radiografias tingidas na cor da marca
+│   ├── dr-arthur.webp  # foto do médico (seção Sobre)
+│   ├── xray-joelho.webp
+│   ├── xray-joelho-perfil.webp
+│   ├── xray-cotovelo.webp
+│   └── xray-ombro.webp # radiografias reais, recortadas e tingidas na cor da marca
 └── README.md
 ```
 
@@ -72,15 +74,14 @@ Animações respeitam `prefers-reduced-motion`.
 - **Horário:** segunda a sexta, das 7h às 16h.
 - **Registro:** CRM-AM 10898 · RQE 5961 (exibido no topo, na seção Sobre e no rodapé, conforme Resolução CFM nº 2.336/2023).
 
-## ✏️ O que falta preencher
+## 🔒 Imagens de pacientes (LGPD)
 
-Itens ainda pendentes:
+As radiografias são de casos reais, fotografadas da tela do sistema de imagem. Antes de entrar no site, cada uma foi **recortada só na área óssea**: nome do paciente, número de registro, data e usuário do sistema foram removidos. Os arquivos originais **não** estão no repositório.
 
-1. **Foto profissional** do médico (opcional, recomendada na seção "Sobre").
-
-## ⚠️ Imagens de raio-X
-
-As radiografias em `assets/` foram derivadas de imagens de banco de imagens (Dreamstime, 123RF) usadas como **provisórias**. Antes de divulgar o site, substitua por imagens licenciadas, de banco gratuito (Unsplash, Pexels, Wikimedia Commons) ou próprias e anonimizadas. Basta manter os mesmos nomes de arquivo.
+Ao adicionar novas imagens:
+- recorte qualquer texto da tela (nome, ID, datas, lateralidade com nome, usuário);
+- nunca suba o arquivo original no repositório;
+- tenha o consentimento do responsável pelo paciente para uso educativo (Resolução CFM nº 2.336/2023).
 
 ## Como editar e publicar
 

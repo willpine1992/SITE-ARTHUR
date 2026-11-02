@@ -178,6 +178,10 @@ h2{font-size:clamp(36px,6vw,64px);margin:14px 0 18px}
 .xray-stack{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:440px;background:#06141b}
 .xray-stack img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:.92;transform:scale(1.04);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
 .xray-stack:hover img{transform:scale(1.02)}
+.xray-stack.photo{background:#d9cbb8}
+.xray-stack.photo img{opacity:1;object-position:center 20%}
+.xray-stack.photo::after{content:"";position:absolute;inset:55% 0 0;background:linear-gradient(transparent,rgba(10,30,40,.55));pointer-events:none}
+.xray-stack .float-card{z-index:1}
 .xray-stack .float-card{position:absolute;left:18px;right:18px;bottom:18px;padding:20px 22px;border-radius:var(--r-md);color:#fff;background:rgba(10,30,40,.28)}
 .xray-stack .float-card::before{background:linear-gradient(140deg,rgba(255,255,255,.5),transparent 40%,transparent 60%,rgba(255,255,255,.3))}
 .float-card b{font-size:20px;letter-spacing:-.02em;display:block}
@@ -364,11 +368,11 @@ footer{padding:40px 0 60px;color:var(--ink-3);font-size:13px}
         <div class="cred"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22V12m0 0c0-4 3-7 7-7 0 4-3 7-7 7zm0 0c0-3-2.5-5.5-5.5-5.5 0 3 2.5 5.5 5.5 5.5z"/></svg></i><div><b>Atendimento humanizado</b><span>A família faz parte do tratamento</span></div></div>
       </div>
     </div>
-    <div class="xray-stack reveal d2">
-      <img src="assets/xray-pe.webp" alt="Radiografia de pé infantil" loading="lazy">
+    <div class="xray-stack photo reveal d2">
+      <img src="assets/dr-arthur.webp" alt="Dr. Arthur Dal Cortivo em seu consultório" loading="lazy">
       <div class="float-card glass">
-        <b>Crescer bem começa cedo.</b>
-        <span>O diagnóstico precoce muda o desfecho de muitas condições ortopédicas da infância.</span>
+        <b>Dr. Arthur Dal Cortivo</b>
+        <span>Ortopedia Pediátrica em Manaus · CRM-AM 10898 · RQE 5961</span>
       </div>
     </div>
   </div>
@@ -383,14 +387,14 @@ footer{padding:40px 0 60px;color:var(--ink-3);font-size:13px}
       <p class="lead reveal d2">Avaliação, diagnóstico e tratamento das principais condições ortopédicas da infância — e do trauma em todas as idades.</p>
     </div>
     <div class="bento">
-      <article class="tile glass img t-4 reveal" style="min-height:340px">
-        <img src="assets/xray-quadril.webp" alt="" loading="lazy">
-        <div class="cap"><h3>Displasia do desenvolvimento do quadril</h3><p>Rastreamento e tratamento desde os primeiros meses de vida. Quanto mais cedo o diagnóstico, mais simples costuma ser o tratamento.</p></div>
+      <article class="tile glass img t-4 reveal" style="min-height:380px">
+        <img src="assets/xray-joelho.webp" alt="" loading="lazy" style="object-position:center 60%">
+        <div class="cap"><h3>Joelho e placa de crescimento</h3><p>Dores no joelho, lesões e alterações da fise — a região onde o osso da criança cresce.</p></div>
       </article>
       <article class="tile glass feature t-2 reveal d1">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3c-2 4-2 9 0 13 1 2 3 5 6 5 2 0 3-1 3-3 0-3-4-4-4-8V3"/></svg></div>
-        <h3>Pé torto e pé plano</h3>
-        <p>Método de Ponseti para o pé torto congênito e acompanhamento do arco plantar.</p>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 3c2 3 2 6 0 9s-2 6 0 9M17 3c-2 3-2 6 0 9s2 6 0 9"/></svg></div>
+        <h3>Displasia do quadril</h3>
+        <p>Rastreamento e tratamento desde os primeiros meses de vida. Quanto mais cedo o diagnóstico, mais simples o tratamento.</p>
       </article>
       <article class="tile glass refract t-2 reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2c-2 3 2 5 0 8s2 5 0 8 0 4 0 4"/><path d="M9 6h6M9 10h6M9 14h6M9 18h6"/></svg></div>
@@ -398,23 +402,31 @@ footer{padding:40px 0 60px;color:var(--ink-3);font-size:13px}
         <p>Detecção, acompanhamento e indicação de colete ou cirurgia quando necessário.</p>
       </article>
       <article class="tile glass refract t-2 reveal d1">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20l6-6m0 0l2-6 4 4-6 2zm6-6l4 4M14 4l6 6"/></svg></div>
-        <h3>Fraturas infantis</h3>
-        <p>Trauma ortopédico com atenção à placa de crescimento.</p>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3c-2 4-2 9 0 13 1 2 3 5 6 5 2 0 3-1 3-3 0-3-4-4-4-8V3"/></svg></div>
+        <h3>Pé torto e pé plano</h3>
+        <p>Método de Ponseti para o pé torto congênito e acompanhamento do arco plantar.</p>
       </article>
       <article class="tile glass refract t-2 reveal d2">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="13" cy="4" r="2"/><path d="M10 22l2-7 3 3v4m-5-12l-3 3 2 2m1-5l4 1 2 3"/></svg></div>
         <h3>Alterações da marcha</h3>
         <p>Pés para dentro, joelhos em X ou arqueados: o que é fase e o que é tratamento.</p>
       </article>
-      <article class="tile glass img t-3 reveal">
-        <img src="assets/xray-maos.webp" alt="" loading="lazy">
-        <div class="cap"><h3>Membros superiores</h3><p>Lesões de punho, cotovelo e mão em crianças.</p></div>
+      <article class="tile glass img t-3 reveal" style="min-height:380px">
+        <img src="assets/xray-cotovelo.webp" alt="" loading="lazy">
+        <div class="cap"><h3>Fraturas infantis</h3><p>Cotovelo, punho e antebraço estão entre as lesões mais frequentes da infância — com atenção à placa de crescimento.</p></div>
       </article>
-      <article class="tile glass refract t-3 reveal d1">
+      <article class="tile glass img t-3 reveal d1" style="min-height:380px">
+        <img src="assets/xray-ombro.webp" alt="" loading="lazy" style="object-position:70% center">
+        <div class="cap"><h3>Ombro e membros superiores</h3><p>Clavícula, ombro e úmero: diagnóstico e tratamento do trauma e das dores no braço.</p></div>
+      </article>
+      <article class="tile glass refract t-3 reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
         <h3>Ortopedia do esporte juvenil</h3>
         <p>Dores de crescimento, lesões por sobrecarga e orientação para a prática esportiva segura.</p>
+      </article>
+      <article class="tile glass img t-3 reveal d1">
+        <img src="assets/xray-joelho-perfil.webp" alt="" loading="lazy" style="object-position:center 45%">
+        <div class="cap"><h3>Trauma ortopédico</h3><p>Entorses, quedas e fraturas em crianças, adolescentes e adultos.</p></div>
       </article>
     </div>
   </div>
