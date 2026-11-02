@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. Arthur Dal Cortivo — Ortopedia Pediátrica</title>
+<meta name="description" content="Dr. Arthur Cartonilho Dal Cortivo — Ortopedia e Traumatologia, Ortopedia Pediátrica. CRM 10898. Cuidado ortopédico para crianças, adolescentes e adultos.">
+<meta name="theme-color" content="#1F4A5E">
+<link rel="icon" href="assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* paleta da logo */
+  --petroleo:#1F4A5E;
+  --petroleo-900:#122F3D;
+  --folha:#5B93A8;
+  --cobre:#B07F55;
+  --tronco:#7A5440;
+  --papel:#EEECE8;
+
+  --bg:#F5F4F1;
+  --ink:#10232D;
+  --ink-2:#4A5D66;
+  --ink-3:#7D8B92;
+  --line:rgba(16,35,45,.10);
+  --glass:rgba(255,255,255,.42);
+  --glass-strong:rgba(255,255,255,.62);
+  --glass-edge:rgba(255,255,255,.75);
+  --glass-shadow:0 1px 0 rgba(255,255,255,.7) inset, 0 -1px 0 rgba(16,35,45,.05) inset, 0 20px 50px -20px rgba(18,47,61,.28);
+  --accent:var(--petroleo);
+  --accent-2:var(--cobre);
+  --blob-a:#5B93A8; --blob-b:#B07F55; --blob-c:#1F4A5E;
+  --r-lg:32px; --r-md:22px; --r-sm:14px;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter",system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#081419; --ink:#ECF2F4; --ink-2:#A9BAC1; --ink-3:#71858D;
+    --line:rgba(255,255,255,.09);
+    --glass:rgba(255,255,255,.06); --glass-strong:rgba(255,255,255,.10); --glass-edge:rgba(255,255,255,.22);
+    --glass-shadow:0 1px 0 rgba(255,255,255,.14) inset, 0 -1px 0 rgba(0,0,0,.3) inset, 0 24px 60px -24px rgba(0,0,0,.7);
+    --accent:#8CC0D3; --accent-2:#D3A27A;
+    --blob-a:#2C6A82; --blob-b:#8A5B37; --blob-c:#16394A;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#081419; --ink:#ECF2F4; --ink-2:#A9BAC1; --ink-3:#71858D;
+  --line:rgba(255,255,255,.09);
+  --glass:rgba(255,255,255,.06); --glass-strong:rgba(255,255,255,.10); --glass-edge:rgba(255,255,255,.22);
+  --glass-shadow:0 1px 0 rgba(255,255,255,.14) inset, 0 -1px 0 rgba(0,0,0,.3) inset, 0 24px 60px -24px rgba(0,0,0,.7);
+  --accent:#8CC0D3; --accent-2:#D3A27A;
+  --blob-a:#2C6A82; --blob-b:#8A5B37; --blob-c:#16394A;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-.011em}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--folha);color:#fff}
+
+/* ---------- fundo fluido ---------- */
+.ambient{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;will-change:transform}
+.blob.a{width:52vmax;height:52vmax;background:var(--blob-a);top:-18vmax;left:-12vmax;animation:drift1 26s ease-in-out infinite alternate}
+.blob.b{width:38vmax;height:38vmax;background:var(--blob-b);top:30vh;right:-14vmax;opacity:.38;animation:drift2 32s ease-in-out infinite alternate}
+.blob.c{width:46vmax;height:46vmax;background:var(--blob-c);bottom:-22vmax;left:20vw;opacity:.35;animation:drift3 30s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(18vw,22vh) scale(1.15)}}
+@keyframes drift2{to{transform:translate(-22vw,-10vh) scale(.9)}}
+@keyframes drift3{to{transform:translate(-14vw,-26vh) scale(1.1)}}
+.grain{position:absolute;inset:-50%;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- vidro líquido ---------- */
+.glass{
+  position:relative;isolation:isolate;
+  background:var(--glass);
+  -webkit-backdrop-filter:blur(22px) saturate(180%);
+  backdrop-filter:blur(22px) saturate(180%);
+  border-radius:var(--r-lg);
+  box-shadow:var(--glass-shadow);
+}
+/* borda especular */
+.glass::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(140deg,var(--glass-edge),transparent 38%,transparent 62%,var(--glass-edge));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+}
+/* reflexo que segue o cursor */
+.glass::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,-20%),rgba(255,255,255,.35),transparent 45%);
+  opacity:var(--glow,0);transition:opacity .4s;
+}
+.glass:hover{--glow:1}
+:root[data-theme="dark"] .glass::after{background:radial-gradient(420px circle at var(--mx,50%) var(--my,-20%),rgba(140,192,211,.16),transparent 45%)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .glass::after{background:radial-gradient(420px circle at var(--mx,50%) var(--my,-20%),rgba(140,192,211,.16),transparent 45%)}}
+/* refração real (Chromium) */
+.liquid .glass.refract{-webkit-backdrop-filter:url(#liquid) blur(14px) saturate(180%);backdrop-filter:url(#liquid) blur(14px) saturate(180%)}
+
+/* ---------- layout ---------- */
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+section{padding:clamp(80px,12vw,150px) 0}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2)}
+h1,h2,h3{letter-spacing:-.035em;line-height:1.04;font-weight:700}
+h2{font-size:clamp(36px,6vw,64px);margin:14px 0 18px}
+.lead{font-size:clamp(18px,2.2vw,22px);color:var(--ink-2);max-width:640px;line-height:1.45;letter-spacing:-.015em}
+.grad{background:linear-gradient(100deg,var(--accent) 10%,var(--folha) 55%,var(--accent-2) 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:50;width:min(1100px,100% - 24px);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 14px;border-radius:999px;transition:padding .3s}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;white-space:nowrap}
+.brand-badge{width:40px;height:40px;border-radius:50%;background:#F3F1ED;display:grid;place-items:center;overflow:hidden;box-shadow:0 0 0 1px rgba(16,35,45,.08)}
+.brand-badge img{width:34px}
+.brand small{display:block;font-size:11px;font-weight:500;color:var(--ink-3);letter-spacing:0}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{padding:8px 14px;border-radius:999px;font-size:14px;color:var(--ink-2);transition:background .25s,color .25s}
+.nav-links a:hover{background:var(--glass-strong);color:var(--ink)}
+.nav-actions{display:flex;align-items:center;gap:6px}
+.icon-btn{width:40px;height:40px;border-radius:50%;border:0;background:transparent;color:var(--ink-2);display:grid;place-items:center;cursor:pointer;transition:background .25s}
+.icon-btn:hover{background:var(--glass-strong);color:var(--ink)}
+.icon-btn svg{width:18px;height:18px}
+.menu-btn{display:none}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;border:0;cursor:pointer;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .3s;white-space:nowrap}
+.btn:active{transform:scale(.96)}
+.btn-primary{background:var(--petroleo);color:#fff;box-shadow:0 10px 30px -10px rgba(31,74,94,.7),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(31,74,94,.8),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn-glass{color:var(--ink)}
+.btn-sm{padding:9px 16px;font-size:14px}
+.btn svg{width:18px;height:18px}
+
+/* ---------- hero ---------- */
+.hero{min-height:100svh;display:flex;align-items:center;padding-top:120px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(44px,7vw,92px);font-weight:800;letter-spacing:-.05em;line-height:.98;margin:20px 0 26px}
+.hero .lead{margin-bottom:36px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px 7px 8px;border-radius:999px;font-size:13px;font-weight:500;color:var(--ink-2)}
+.chip .dot{width:22px;height:22px;border-radius:50%;background:var(--cobre);display:grid;place-items:center;color:#fff}
+.chip .dot svg{width:12px;height:12px}
+.hero-card{padding:34px;aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.hero-card .logo-wrap{flex:1;display:grid;place-items:center;position:relative}
+.hero-card .logo-wrap::before{content:"";position:absolute;width:74%;aspect-ratio:1;border-radius:50%;background:linear-gradient(160deg,#F7F5F1,#E6E3DD);box-shadow:0 30px 60px -20px rgba(0,0,0,.35),inset 0 1px 0 #fff,inset 0 -8px 20px rgba(18,47,61,.08)}
+.hero-card .logo-wrap img{position:relative;width:62%;filter:drop-shadow(0 18px 30px rgba(18,47,61,.25));animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.hero-meta{display:flex;justify-content:space-between;align-items:end;gap:12px}
+.hero-meta strong{display:block;font-size:17px;letter-spacing:-.02em}
+.hero-meta span{font-size:13px;color:var(--ink-3)}
+.crm{font-size:12px;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--cobre);color:#fff;letter-spacing:.04em}
+
+/* ---------- marquee ---------- */
+.marquee{padding:0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marquee-track{display:flex;gap:44px;width:max-content;animation:scroll 40s linear infinite;padding:28px 0}
+.marquee-track span{font-size:clamp(22px,3vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--ink-3);white-space:nowrap;display:flex;align-items:center;gap:44px}
+.marquee-track span::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--cobre)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- sobre ---------- */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.about-text{padding:clamp(28px,4vw,48px)}
+.about-text p{color:var(--ink-2);font-size:17px;margin-bottom:16px}
+.creds{display:grid;gap:10px;margin-top:26px}
+.cred{display:flex;gap:14px;align-items:center;padding:14px 16px;border-radius:var(--r-sm);background:var(--glass-strong)}
+.cred i{flex:none;width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:var(--petroleo);color:#fff}
+.cred:nth-child(2) i{background:var(--cobre)}
+.cred:nth-child(3) i{background:var(--folha)}
+.cred i svg{width:18px;height:18px}
+.cred b{display:block;font-size:15px;font-weight:600}
+.cred span{font-size:13px;color:var(--ink-3)}
+.xray-stack{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:440px;background:#06141b}
+.xray-stack img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:.92;transform:scale(1.04);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.xray-stack:hover img{transform:scale(1.02)}
+.xray-stack .float-card{position:absolute;left:18px;right:18px;bottom:18px;padding:20px 22px;border-radius:var(--r-md);color:#fff;background:rgba(10,30,40,.28)}
+.xray-stack .float-card::before{background:linear-gradient(140deg,rgba(255,255,255,.5),transparent 40%,transparent 60%,rgba(255,255,255,.3))}
+.float-card b{font-size:20px;letter-spacing:-.02em;display:block}
+.float-card span{font-size:14px;opacity:.8}
+
+/* ---------- áreas (bento) ---------- */
+.section-head{text-align:center;display:flex;flex-direction:column;align-items:center;margin-bottom:56px}
+.section-head .lead{margin-inline:auto}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.tile{padding:30px;border-radius:var(--r-lg);display:flex;flex-direction:column;gap:10px;min-height:230px;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.tile:hover{transform:translateY(-4px)}
+.tile .ico{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:var(--glass-strong);color:var(--accent);margin-bottom:auto}
+.tile .ico svg{width:24px;height:24px}
+.tile h3{font-size:22px;letter-spacing:-.025em;margin-top:20px}
+.tile p{color:var(--ink-2);font-size:15px}
+.t-3{grid-column:span 3}.t-2{grid-column:span 2}.t-4{grid-column:span 4}
+.tile.img{padding:0;overflow:hidden;background:#06141b;color:#fff;justify-content:flex-end}
+.tile.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85;z-index:-1;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.tile.img:hover img{transform:scale(1.06)}
+.tile.img .cap{padding:28px;background:linear-gradient(transparent,rgba(6,20,27,.85))}
+.tile.img .cap p{color:rgba(255,255,255,.78)}
+.tile.feature{background:linear-gradient(150deg,var(--petroleo),var(--petroleo-900));color:#fff}
+.tile.feature p{color:rgba(255,255,255,.75)}
+.tile.feature .ico{background:rgba(255,255,255,.12);color:#fff}
+
+/* ---------- sinais ---------- */
+.signals{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.signal{display:flex;gap:14px;align-items:flex-start;padding:22px;border-radius:var(--r-md)}
+.signal .n{flex:none;font-size:13px;font-weight:700;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--cobre);color:#fff}
+.signal p{font-size:15.5px;color:var(--ink-2)}
+.signal p b{color:var(--ink);font-weight:600}
+
+/* ---------- consulta / passos ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+.step{padding:34px 30px;border-radius:var(--r-lg)}
+.step .num{font-size:64px;font-weight:800;letter-spacing:-.06em;line-height:1}
+.step h3{font-size:21px;margin:18px 0 8px}
+.step p{color:var(--ink-2);font-size:15px}
+
+/* ---------- faq ---------- */
+.faq{max-width:820px;margin-inline:auto;display:grid;gap:12px}
+details{border-radius:var(--r-md);padding:0 26px}
+summary{list-style:none;cursor:pointer;padding:22px 0;font-weight:600;font-size:17px;display:flex;justify-content:space-between;align-items:center;gap:16px;letter-spacing:-.015em}
+summary::-webkit-details-marker{display:none}
+summary .plus{flex:none;width:28px;height:28px;border-radius:50%;background:var(--glass-strong);display:grid;place-items:center;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+summary .plus svg{width:14px;height:14px}
+details[open] summary .plus{transform:rotate(45deg)}
+details .ans{color:var(--ink-2);font-size:15.5px;padding-bottom:22px;max-width:680px}
+
+/* ---------- contato ---------- */
+.contact{padding:clamp(34px,6vw,72px);border-radius:40px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;overflow:hidden}
+.contact h2{margin-top:10px}
+.contact-list{display:grid;gap:12px}
+.c-item{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:var(--r-md);background:var(--glass-strong);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+a.c-item:hover{transform:translateX(4px)}
+.c-item i{flex:none;width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:var(--petroleo);color:#fff}
+.c-item i svg{width:20px;height:20px}
+.c-item b{display:block;font-size:15px}
+.c-item span{font-size:13.5px;color:var(--ink-3)}
+
+footer{padding:40px 0 60px;color:var(--ink-3);font-size:13px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-top:28px}
+
+/* botão flutuante */
+.fab{position:fixed;right:18px;bottom:18px;z-index:40;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:#fff;
+  background:linear-gradient(150deg,#2a6d86,var(--petroleo));box-shadow:0 14px 34px -10px rgba(31,74,94,.8),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:26px;height:26px}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(36px);filter:blur(6px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1),filter 1s}
+.reveal.in{opacity:1;transform:none;filter:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* ---------- responsivo ---------- */
+@media (max-width:960px){
+  .hero-grid,.about-grid,.contact{grid-template-columns:1fr}
+  .hero-card{aspect-ratio:auto;min-height:420px;max-width:460px}
+  .t-3,.t-2,.t-4{grid-column:span 6}
+  .steps{grid-template-columns:1fr}
+}
+@media (max-width:820px){
+  .nav-links{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;padding:10px;border-radius:24px;
+    background:var(--glass-strong);-webkit-backdrop-filter:blur(30px) saturate(180%);backdrop-filter:blur(30px) saturate(180%);box-shadow:var(--glass-shadow)}
+  .nav.open .nav-links{display:flex}
+  .nav-links a{padding:14px 16px;font-size:16px}
+  .menu-btn{display:grid}
+  .nav .btn-sm{display:none}
+}
+@media (max-width:520px){
+  .brand small{display:none}
+  .tile{min-height:200px;padding:24px}
+  details{padding:0 18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none;filter:none}
+}
+</style>
+</head>
+<body>
+
+<!-- filtro de refração do vidro líquido -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="liquid" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.004 0.006" numOctaves="1" seed="7" result="noise"/>
+    <feGaussianBlur in="noise" stdDeviation="6" result="soft"/>
+    <feDisplacementMap in="SourceGraphic" in2="soft" scale="16" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<div class="ambient" aria-hidden="true">
+  <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
+  <div class="grain"></div>
+</div>
+
+<!-- NAV -->
+<nav class="nav glass refract" id="nav">
+  <a href="#inicio" class="brand">
+    <span class="brand-badge"><img src="assets/logo-mark.png" alt=""></span>
+    <span>Dr. Arthur Dal Cortivo<small>Ortopedia Pediátrica</small></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#atuacao">Atuação</a></li>
+    <li><a href="#consulta">Consulta</a></li>
+    <li><a href="#duvidas">Dúvidas</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="icon-btn" id="themeBtn" aria-label="Alternar tema">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+    <a href="#contato" class="btn btn-primary btn-sm">Agendar consulta</a>
+  </div>
+</nav>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="chip glass reveal"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span>Ortopedia e Traumatologia · CRM 10898</span>
+      <h1 class="reveal d1">Cuidar de quem<br><span class="grad">ainda está crescendo.</span></h1>
+      <p class="lead reveal d2">Ortopedia pediátrica com escuta, precisão e acolhimento. Do primeiro passo ao esporte na adolescência, acompanhamos o desenvolvimento dos ossos e articulações do seu filho.</p>
+      <div class="cta-row reveal d3">
+        <a href="#contato" class="btn btn-primary">Agendar consulta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#atuacao" class="btn btn-glass glass">Áreas de atuação</a>
+      </div>
+    </div>
+    <div class="hero-card glass reveal d2">
+      <div class="logo-wrap"><img src="assets/logo-mark.png" alt="Logo AC — Ortopedia Dr. Arthur Dal Cortivo"></div>
+      <div class="hero-meta">
+        <div><strong>Dr. Arthur Cartonilho Dal Cortivo</strong><span>Ortopedia Pediátrica</span></div>
+        <span class="crm">CRM 10898</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Pé torto congênito</span><span>Displasia do quadril</span><span>Escoliose</span><span>Fraturas infantis</span><span>Alterações da marcha</span><span>Pé plano</span><span>Lesões no esporte</span><span>Discrepância de membros</span>
+    <span>Pé torto congênito</span><span>Displasia do quadril</span><span>Escoliose</span><span>Fraturas infantis</span><span>Alterações da marcha</span><span>Pé plano</span><span>Lesões no esporte</span><span>Discrepância de membros</span>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-text glass reveal">
+      <span class="eyebrow">Sobre o médico</span>
+      <h2>Ciência no tratamento. <span class="grad">Cuidado</span> na relação.</h2>
+      <p>O Dr. Arthur Cartonilho Dal Cortivo é médico ortopedista e traumatologista com atuação em ortopedia pediátrica — a área que cuida do sistema musculoesquelético de bebês, crianças e adolescentes.</p>
+      <p>Na criança, o osso cresce, se remodela e responde de forma diferente do adulto. Por isso, cada diagnóstico considera a fase de desenvolvimento, e cada plano de tratamento é construído junto com a família.</p>
+      <div class="creds">
+        <div class="cred"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></i><div><b>Ortopedia e Traumatologia</b><span>CRM 10898</span></div></div>
+        <div class="cred"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="7" r="3"/><path d="M12 10v5m-4 6l4-6 4 6M7 13h10"/></svg></i><div><b>Ortopedia Pediátrica</b><span>Bebês, crianças e adolescentes</span></div></div>
+        <div class="cred"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22V12m0 0c0-4 3-7 7-7 0 4-3 7-7 7zm0 0c0-3-2.5-5.5-5.5-5.5 0 3 2.5 5.5 5.5 5.5z"/></svg></i><div><b>Atendimento humanizado</b><span>A família faz parte do tratamento</span></div></div>
+      </div>
+    </div>
+    <div class="xray-stack reveal d2">
+      <img src="assets/xray-pe.webp" alt="Radiografia de pé infantil" loading="lazy">
+      <div class="float-card glass">
+        <b>Crescer bem começa cedo.</b>
+        <span>O diagnóstico precoce muda o desfecho de muitas condições ortopédicas da infância.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATUAÇÃO -->
+<section id="atuacao">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Áreas de atuação</span>
+      <h2 class="reveal d1">Do recém-nascido<br>ao <span class="grad">adolescente atleta.</span></h2>
+      <p class="lead reveal d2">Avaliação, diagnóstico e tratamento das principais condições ortopédicas da infância — e do trauma em todas as idades.</p>
+    </div>
+    <div class="bento">
+      <article class="tile glass img t-4 reveal" style="min-height:340px">
+        <img src="assets/xray-quadril.webp" alt="" loading="lazy">
+        <div class="cap"><h3>Displasia do desenvolvimento do quadril</h3><p>Rastreamento e tratamento desde os primeiros meses de vida. Quanto mais cedo o diagnóstico, mais simples costuma ser o tratamento.</p></div>
+      </article>
+      <article class="tile glass feature t-2 reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3c-2 4-2 9 0 13 1 2 3 5 6 5 2 0 3-1 3-3 0-3-4-4-4-8V3"/></svg></div>
+        <h3>Pé torto e pé plano</h3>
+        <p>Método de Ponseti para o pé torto congênito e acompanhamento do arco plantar.</p>
+      </article>
+      <article class="tile glass refract t-2 reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2c-2 3 2 5 0 8s2 5 0 8 0 4 0 4"/><path d="M9 6h6M9 10h6M9 14h6M9 18h6"/></svg></div>
+        <h3>Escoliose</h3>
+        <p>Detecção, acompanhamento e indicação de colete ou cirurgia quando necessário.</p>
+      </article>
+      <article class="tile glass refract t-2 reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20l6-6m0 0l2-6 4 4-6 2zm6-6l4 4M14 4l6 6"/></svg></div>
+        <h3>Fraturas infantis</h3>
+        <p>Trauma ortopédico com atenção à placa de crescimento.</p>
+      </article>
+      <article class="tile glass refract t-2 reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="13" cy="4" r="2"/><path d="M10 22l2-7 3 3v4m-5-12l-3 3 2 2m1-5l4 1 2 3"/></svg></div>
+        <h3>Alterações da marcha</h3>
+        <p>Pés para dentro, joelhos em X ou arqueados: o que é fase e o que é tratamento.</p>
+      </article>
+      <article class="tile glass img t-3 reveal">
+        <img src="assets/xray-maos.webp" alt="" loading="lazy">
+        <div class="cap"><h3>Membros superiores</h3><p>Lesões de punho, cotovelo e mão em crianças.</p></div>
+      </article>
+      <article class="tile glass refract t-3 reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+        <h3>Ortopedia do esporte juvenil</h3>
+        <p>Dores de crescimento, lesões por sobrecarga e orientação para a prática esportiva segura.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SINAIS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Quando procurar</span>
+      <h2 class="reveal d1">Sinais que merecem<br>uma avaliação.</h2>
+    </div>
+    <div class="signals">
+      <div class="signal glass reveal"><span class="n">1</span><p><b>Mancar ou andar diferente</b> sem causa aparente.</p></div>
+      <div class="signal glass reveal d1"><span class="n">2</span><p><b>Dor que acorda à noite</b> ou que não melhora com repouso.</p></div>
+      <div class="signal glass reveal d2"><span class="n">3</span><p><b>Ombros ou quadris desalinhados</b>, ou um lado das costas mais alto.</p></div>
+      <div class="signal glass reveal"><span class="n">4</span><p><b>Pernas de tamanhos diferentes</b> ou dobras assimétricas no bebê.</p></div>
+      <div class="signal glass reveal d1"><span class="n">5</span><p><b>Pés muito para dentro ou para fora</b> após os primeiros anos.</p></div>
+      <div class="signal glass reveal d2"><span class="n">6</span><p><b>Quedas e torções</b> com inchaço ou dificuldade de apoiar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTA -->
+<section id="consulta" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">A consulta</span>
+      <h2 class="reveal d1">Simples, <span class="grad">sem pressa.</span></h2>
+      <p class="lead reveal d2">Uma consulta pensada para a criança se sentir à vontade e para a família sair com todas as respostas.</p>
+    </div>
+    <div class="steps">
+      <div class="step glass refract reveal"><div class="num grad">01</div><h3>Escuta</h3><p>Conversamos sobre a história, o desenvolvimento e as preocupações da família.</p></div>
+      <div class="step glass refract reveal d1"><div class="num grad">02</div><h3>Exame</h3><p>Avaliação clínica cuidadosa e, quando necessário, exames de imagem.</p></div>
+      <div class="step glass refract reveal d2"><div class="num grad">03</div><h3>Plano</h3><p>Explicação clara do diagnóstico e um plano de tratamento construído em conjunto.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="duvidas" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Dúvidas frequentes</span>
+      <h2 class="reveal d1">Perguntas dos pais.</h2>
+    </div>
+    <div class="faq">
+      <details class="glass reveal"><summary>A partir de que idade a criança pode ir ao ortopedista?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Desde o nascimento. Algumas condições, como a displasia do quadril e o pé torto congênito, são idealmente avaliadas nas primeiras semanas de vida.</div></details>
+      <details class="glass reveal"><summary>Pé chato em criança precisa de tratamento?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Na maioria das vezes, o pé plano infantil é flexível e faz parte do desenvolvimento normal. A avaliação ortopédica diferencia os casos que só precisam de acompanhamento daqueles que exigem tratamento.</div></details>
+      <details class="glass reveal"><summary>"Dor de crescimento" existe?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Existe, e é comum. Mas dores persistentes, localizadas em um só lado, com inchaço, febre ou que fazem a criança mancar devem ser avaliadas.</div></details>
+      <details class="glass reveal"><summary>O que devo levar na consulta?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Exames de imagem anteriores, a caderneta de saúde da criança e, se possível, roupas confortáveis que permitam avaliar a marcha e a coluna.</div></details>
+      <details class="glass reveal"><summary>Também atende adultos?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Sim. Como ortopedista e traumatologista, o Dr. Arthur também atende traumas e queixas ortopédicas em adultos.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact glass reveal">
+      <div>
+        <span class="eyebrow">Agendamento</span>
+        <h2>Vamos cuidar<br><span class="grad">juntos.</span></h2>
+        <p class="lead" style="margin-bottom:28px">Agende uma avaliação pelo WhatsApp. Respondemos em horário comercial.</p>
+        <!-- TODO: trocar 5592000000000 pelo número real -->
+        <a class="btn btn-primary" href="https://wa.me/5592000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Arthur." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2S21.8 6.6 21.8 12 17.4 21.8 12 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
+          Agendar pelo WhatsApp</a>
+      </div>
+      <div class="contact-list">
+        <!-- TODO: preencher endereço, telefone e Instagram reais -->
+        <a class="c-item" href="#" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></i><div><b>Consultório</b><span>Endereço a definir</span></div></a>
+        <a class="c-item" href="#"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></i><div><b>Telefone</b><span>(92) 0000-0000</span></div></a>
+        <a class="c-item" href="#" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></i><div><b>Instagram</b><span>@seu.perfil</span></div></a>
+        <div class="c-item"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i><div><b>Horário</b><span>Segunda a sexta · horário a definir</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>Dr. Arthur Cartonilho Dal Cortivo · Ortopedia e Traumatologia · CRM 10898</span>
+    <span>As informações deste site têm caráter educativo e não substituem a consulta médica.</span>
+  </div>
+</footer>
+
+<a class="fab" href="#contato" aria-label="Agendar consulta">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+</a>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  // refração real só onde o navegador suporta backdrop-filter com url() (Chromium)
+  const ua = navigator.userAgent;
+  if (/Chrome\//.test(ua)) root.classList.add('liquid');
+
+  // tema
+  const saved = (() => { try { return localStorage.getItem('theme'); } catch { return null; } })();
+  if (saved) root.dataset.theme = saved;
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch {}
+  });
+
+  // menu mobile
+  const nav = document.getElementById('nav');
+  document.getElementById('menuBtn').addEventListener('click', () => nav.classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+  // reflexo que segue o cursor
+  document.querySelectorAll('.glass').forEach(el => {
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  // revelar ao rolar
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // parallax suave nos blobs
+  const blobs = document.querySelectorAll('.blob');
+  addEventListener('scroll', () => {
+    const y = scrollY;
+    blobs.forEach((b, i) => b.style.translate = `0 ${y * (i + 1) * -0.06}px`);
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
